@@ -1,4 +1,3 @@
-# SSH-bruteforce-lab
 # SSH Brute-Force Detection & Incident Response
 
 **Tools:** Ubuntu · Hydra · Fail2Ban · Sigma · MITRE ATT&CK  
