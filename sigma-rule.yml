@@ -1,0 +1,28 @@
+title: SSH Brute Force - Success After Failures
+status: experimental
+description: >
+  Detects multiple failed SSH authentication attempts followed by
+  a successful login from the same source IP within a short window.
+author: Sama Tahir
+date: 2026/07
+references:
+  - https://attack.mitre.org/techniques/T1110/
+logsource:
+  product: linux
+  service: auth
+detection:
+  failed_attempts:
+    keywords:
+      - 'Failed password'
+  successful_auth:
+    keywords:
+      - 'Accepted password'
+  condition: failed_attempts and successful_auth
+falsepositives:
+  - Legitimate users mistyping passwords multiple times
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1110
+  - attack.t1110.001
+  - attack.t1078
