@@ -17,7 +17,7 @@ In this lab, I simulated an SSH brute-force attack against a Linux target using 
 
 | IOC Type | Value | Description |
 |---|---|---|
-| Source IP | 192.168.x.x | Attacking machine |
+| Source IP | 192.168.9.2 | Attacking machine |
 | Username | [target user] | Compromised account |
 | Tool | Hydra | Brute-force tool |
 | Auth Method | Password | SSH password auth |
