@@ -7,11 +7,9 @@
 
 ---
 
-## Executive Summary
+## Summary
 
-A brute-force SSH attack was detected against a Linux target host.
-The attacker used Hydra to systematically attempt credentials until
-a successful authentication was achieved, confirming credential compromise.
+In this lab, I simulated an SSH brute-force attack against a Linux target using Hydra. I analyzed the authentication logs and identified repeated login attempts, including a successful login that indicated potential credential compromise.
 
 ---
 
