@@ -2,7 +2,7 @@
 
 **Tools:** Ubuntu · Hydra · Fail2Ban · Sigma · MITRE ATT&CK  
 **Type:** Blue Team Home Lab  
-**Status:** Complete
+**Status:** ![Complete](https://img.shields.io/badge/Complete-brightgreen?style=flat-square) |
 
 ---
 
