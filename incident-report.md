@@ -1,8 +1,7 @@
 # Incident Report — SSH Brute Force Attack
 
 **Incident ID:** IR-2026-001  
-**Date:** July 2026  
-**Analyst:** Sama Tahir  
+**Date:** July 2026    
 **Severity:** High  
 **Status:** Resolved  
 
