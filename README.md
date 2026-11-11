@@ -71,5 +71,4 @@ For prevention, consider key-based authentication, restricting SSH to trusted ne
 - [`incident-report.md`](incident-report.md) — investigation summary.
 
 ## Limitations
-
-Log formats and field names vary across systems and collection tools, so the Sigma rule may need adjustments. This lab is for defensive learning and is not a production-ready monitoring or incident response system.
+ Sigma rule may need adjustments because log formats vary across systems. This lab is for defensive learning and is not a production-ready monitoring or incident response system.
