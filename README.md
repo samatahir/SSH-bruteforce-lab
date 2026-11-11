@@ -27,7 +27,6 @@ We are using Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. 
 - Sigma for expressing detection logic
 - MITRE ATT&CK for technique mapping
 
-See [`lab-setup.md`](lab-setup.md) for environment details and exercise instructions.
 
 ## Investigation Workflow
 
