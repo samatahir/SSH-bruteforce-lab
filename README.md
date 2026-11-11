@@ -4,7 +4,7 @@
 [![Type](https://img.shields.io/badge/Type-Blue%20Team%20Lab-blue?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
 [![Platform](https://img.shields.io/badge/Platform-Ubuntu%20Linux-orange?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
 
-A defensive lab for learning how to detect repeated SSH login failures, investigate a possible successful password guess, and document an incident response. Run simulations only in an isolated environment you own or are authorized to use.
+This defensive lab is for learning how to detect repeated SSH login failures, investigate a possible successful password guess, and document an incident response. Run simulations only in an isolated environment you own or are authorized to use.
 
 ## Overview
 
