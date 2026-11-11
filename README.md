@@ -86,10 +86,7 @@ This is a classic brute-force-to-success pattern often associated with credentia
 - Restrict SSH access to trusted IP ranges or jump hosts
 - Enable real-time alerting on authentication anomalies
 - Require MFA or stronger access controls for privileged accounts
-
-## Responsible Use
-
-This lab is intended for authorized, isolated, and learning-focused environments only. Do not run brute-force testing against systems you do not own or have explicit permission to evaluate.
+.
 
 ## Related Files
 
