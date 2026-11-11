@@ -20,7 +20,7 @@ Linux SSH services record authentication events that can help defenders identify
 
 ## Lab Environment and Tools
 
-The exercise uses Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. Review the target's authentication logs, typically `/var/log/auth.log` on Ubuntu. Log locations and formats may differ by distribution.
+We are using Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. Reviewing the target's authentication logs, typically `/var/log/auth.log` on Ubuntu. Log locations and formats may vary.
 
 - Ubuntu Linux and OpenSSH
 - Hydra for authorized lab simulation only
@@ -41,15 +41,15 @@ See [`lab-setup.md`](lab-setup.md) for environment details and exercise instruct
 
 ## Detection Logic
 
-The detection looks for multiple failed SSH authentications followed by a successful authentication from the same source within a defined period. This pattern may indicate password guessing that resulted in access.
+Here the detection looks for multiple failed SSH authentications followed by a successful authentication from the same source within a defined period. This pattern might indicate password guessing that resulted in access.
 
-Treat an alert as an investigation lead, not proof of compromise. Mistyped passwords can produce failures, while NAT, VPNs, or shared jump hosts can make multiple users appear to share one address. Check the account, timing, source, and surrounding activity before drawing conclusions.
+Alert is Only an investigation lead, not proof of compromise. Mistyped passwords can produce failures, while NAT, VPNs, or shared jump hosts can make multiple users appear to share one address. Check the account, timing, surrounding activity before drawing conclusions.
 
 ## MITRE ATT&CK Mapping
 
 - **T1110 — Brute Force:** Repeated attempts to gain access by guessing credentials.
 - **T1110.001 — Password Guessing:** Guessing passwords for an account or service.
-- **T1078 — Valid Accounts:** May apply if valid credentials were used to gain access.
+- **T1078 — Valid Accounts:** Might apply if valid credentials were used to gain access.
 
 ## Incident Response
 
@@ -62,7 +62,7 @@ If investigation suggests unauthorized access:
 5. Inspect activity after the login and assess whether other systems or accounts were affected.
 6. Harden SSH access, monitor for recurrence, and document findings and recovery actions.
 
-For prevention, consider key-based authentication, restricting SSH to trusted networks, Fail2Ban or an equivalent control, and alerts for unusual authentication activity. Follow local policies before changing access or blocking addresses.
+For prevention, use key-based authentication, restricting SSH to trusted networks, Fail2Ban or an equivalent control, and alerts for unusual authentication activity. Follow local policies before changing access or blocking addresses.
 
 ## Repository Contents
 
@@ -71,4 +71,4 @@ For prevention, consider key-based authentication, restricting SSH to trusted ne
 - [`incident-report.md`](incident-report.md) — investigation summary.
 
 ## Limitations
- Sigma rule may need adjustments because log formats vary across systems. This lab is for defensive learning and is not a production-ready monitoring or incident response system.
+ Sigma rule might need adjustments because log formats vary across systems. This lab is for defensive learning and is not a production ready monitoring or IR system.
