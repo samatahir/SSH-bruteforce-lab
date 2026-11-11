@@ -1,40 +1,14 @@
-# SSH Brute-Force Detection & Incident Response
+# SSH Brute-Force Lab
 
-[![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
-[![Type](https://img.shields.io/badge/Type-Blue%20Team%20Lab-blue?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
-[![Platform](https://img.shields.io/badge/Platform-Ubuntu%20Linux-orange?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
+This lab shows how a brute-force SSH attack looks in a controlled environment and how to detect it.
 
-A controlled, isolated home lab built to simulate an SSH brute-force attack, validate detection logic, and document an incident response workflow.
+## Goal
 
-## Overview
-
-This repository contains a practical security exercise focused on:
-
-- SSH authentication abuse detection
-- Linux authentication log analysis
-- MITRE ATT&CK mapping
-- Sigma rule creation
-- SOC-style incident documentation
-
-The lab was designed to demonstrate how malicious login attempts can be identified from system logs and how defenders can respond before a compromise becomes a full incident.
-
-## Lab Objective
-
-The goal is to recreate a realistic attack path in a contained environment:
-
-1. Establish a normal Linux baseline
-2. Perform a simulated brute-force attack against SSH
-3. Observe repeated failures in `/var/log/auth.log`
-4. Detect the successful login that follows
-5. Correlate events to a likely credential compromise
-6. Apply containment and remediation controls
-
-## Architecture
-
-- Attacker host: Ubuntu/Linux system running Hydra
-- Target host: Ubuntu/Linux SSH server
-- Monitoring source: `auth.log` and authentication telemetry
-- Detection: Sigma rule for brute-force + successful login pattern
+- Test a normal Linux setup
+- Simulate repeated SSH login attempts
+- Watch authentication logs
+- Detect the attack pattern
+- Respond to the compromise
 
 ## Tools Used
 
@@ -43,54 +17,41 @@ The goal is to recreate a realistic attack path in a contained environment:
 - Hydra
 - Fail2Ban
 - Sigma
-- MITRE ATT&CK framework
 
 ## Attack Flow
 
-| Time | Event |
-| --- | --- |
-| T+00:00 | Baseline authentication activity established |
-| T+00:05 | Failed SSH password attempts begin from a single source IP |
-| T+00:07 | SSH login succeeds using a guessed credential |
-| T+00:10 | Log correlation confirms compromise |
-| T+00:15 | Containment and remediation actions start |
+1. A normal SSH login pattern is established.
+2. Many failed login attempts come from one IP address.
+3. A guessed password eventually succeeds.
+4. The logs confirm that the account was compromised.
+5. The incident is contained and remediated.
 
 ## Detection Logic
 
-The core pattern being monitored is:
+The system should alert when:
 
-- multiple failed SSH login attempts from one source IP
-- followed by a successful SSH authentication from the same IP within a short window
+- multiple failed SSH logins happen from the same source IP
+- a successful SSH login happens from that same IP shortly after
 
-This is a classic brute-force-to-success pattern often associated with credential access and password guessing.
+This is a classic password-guessing attack.
 
 ## MITRE ATT&CK Mapping
 
-| Technique | ID | Description |
-| --- | --- | --- |
-| Brute Force | T1110 | Automated password guessing or credential stuffing |
-| Password Guessing | T1110.001 | Repeated attempts against a known service |
-| Valid Accounts | T1078 | Successful use of compromised credentials |
+- T1110: Brute Force
+- T1110.001: Password Guessing
+- T1078: Valid Accounts
 
 ## Repository Contents
 
-- `README.md` — project overview and attack flow
-- `incident-report.md` — SOC-style investigation summary
-- `sigma-rule.yml` — Sigma detection rule for the SSH brute-force pattern
-- `lab-setup.md` — environment setup and reproduction steps
+- `README.md` — project summary
+- `lab-setup.md` — setup and reproduction steps
+- `sigma-rule.yml` — Sigma detection rule
+- `incident-report.md` — investigation write-up
 
-## Suggested Remediation
+## Recommended Response
 
-- Disable password-based SSH access in favor of key-based authentication
-- Use Fail2Ban or similar automation to block repeated failures
-- Restrict SSH access to trusted IP ranges or jump hosts
-- Enable real-time alerting on authentication anomalies
-- Require MFA or stronger access controls for privileged accounts
-.
-
-## Related Files
-
-- `sigma-rule.yml`
-- `incident-report.md`
-- `lab-setup.md`
-
+- Disable password SSH logins
+- Block repeated failed attempts with Fail2Ban
+- Restrict SSH to trusted IP ranges
+- Alert on suspicious authentication activity
+- Require stronger authentication for privileged accounts
