@@ -1,10 +1,10 @@
-# SSH Brute-Force Detection & Incident Response Lab
+# SSH Brute-Force Detection & Incident Response 
 
 [![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
 [![Type](https://img.shields.io/badge/Type-Blue%20Team%20Lab-blue?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
 [![Platform](https://img.shields.io/badge/Platform-Ubuntu%20Linux-orange?style=for-the-badge)](https://github.com/samatahir/SSH-bruteforce-lab)
 
-This brute force lab is for learning how to detect repeated SSH login failures, investigate a possible successful password guess, and document an incident response.
+This project is for learning how to detect repeated SSH login failures, investigate a possible successful password guess, and document an incident response.
 ## Overview
 
 Linux SSH services record authentication events that can help defenders identify password-guessing activity. This project demonstrates a blue-team workflow: establish a baseline, review authentication logs, validate a detection rule, investigate suspicious activity, and recommend containment and recovery steps.
