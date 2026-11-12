@@ -55,7 +55,7 @@ If investigation suggests unauthorized access:
 
 1. Preserve relevant logs and record timestamps, source addresses, and affected accounts.
 2. Confirm whether the login was expected with the account owner or system administrator.
-3. Contain the risk using your approved process, such as restricting the source or disabling a compromised account.
+3. Contain the risk using your approved process, aka restricting the source or disabling a compromised account.
 4. Rotate affected credentials and review SSH keys and account permissions.
 5. Inspect activity after the login and assess whether other systems or accounts were affected.
 6. Harden SSH access, monitor for recurrence, and document findings and recovery actions.
@@ -69,4 +69,4 @@ For prevention, use key-based authentication, restricting SSH to trusted network
 - [`incident-report.md`](incident-report.md) — investigation summary.
 
 ## Limitations
- Sigma rule might need adjustments because log formats vary across systems. This lab is for defensive learning and is not a production ready monitoring or IR system.
+ Sigma rule might need adjustments because log formats vary across systems. 
