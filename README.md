@@ -19,7 +19,7 @@ Linux SSH services record authentication events that can help defenders identify
 
 ## Lab Environment and Tools
 
-We are using Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. Reviewing the target's authentication logs, typically `/var/log/auth.log` on Ubuntu. Log locations and formats may vary.
+We are using Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. Reviewing the target's authentication logs, `/var/log/auth.log` on Ubuntu. 
 
 - Ubuntu Linux and OpenSSH
 - Hydra for authorized lab simulation only
