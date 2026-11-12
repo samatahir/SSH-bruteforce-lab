@@ -14,8 +14,8 @@ Linux SSH services record authentication events that can help defenders identify
 - Find SSH authentication events in Linux logs.
 - Identify repeated failures from one source address.
 - Check for a later successful login from that source.
-- Map the activity to MITRE ATT&CK.
-- Practice documenting investigation and response actions.
+- Map the activity to MITRE ATT&CK
+- Document investigation and response actions.
 
 ## Lab Environment and Tools
 
