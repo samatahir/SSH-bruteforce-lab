@@ -41,7 +41,7 @@ We are using Ubuntu/Linux systems with OpenSSH in a controlled, isolated setup. 
 
 Here the detection looks for multiple failed SSH authentications followed by a successful authentication from the same source within a defined period. This pattern might indicate password guessing that resulted in access.
 
-Alert is Only an investigation lead, not proof of compromise. Mistyped passwords can produce failures, while NAT, VPNs, or shared jump hosts can make multiple users appear to share one address. Check the account, timing, surrounding activity before drawing conclusions.
+Alert is only an investigation lead, not proof of compromise. Mistyped passwords or a number of things can produce failures, while NAT, VPNs, or shared jump hosts can make multiple users appear to share one address. It may or may not be the case. Check the account, timing, surrounding activity before drawing conclusions.
 
 ## MITRE ATT&CK Mapping
 
@@ -60,7 +60,7 @@ If investigation suggests unauthorized access:
 5. Inspect activity after the login and assess whether other systems or accounts were affected.
 6. Harden SSH access, monitor for recurrence, and document findings and recovery actions.
 
-For prevention, use key-based authentication, restricting SSH to trusted networks, Fail2Ban or an equivalent control, and alerts for unusual authentication activity. Follow local policies before changing access or blocking addresses.
+For prevention, use key-based authentication, restricting SSH to trusted networks, Fail2Ban or an equivalent control, and alerts for unusual authentication activity. Follow policies before changing access or blocking addresses.
 
 ## Repository Contents
 
